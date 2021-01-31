@@ -35,11 +35,10 @@ function Songs() {
   });
 
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.navbar}>
         <Icon name="menu" size={30} color="#d0d1d4" />
         {!isSearch ? <Text style={styles.text}>Songs</Text> : null}
-
         <Animated.View
           style={[
             styles.inputContainer,
@@ -60,6 +59,11 @@ function Songs() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 8,
+    flex: 1,
+    backgroundColor: '#181b2c',
+  },
   navbar: {
     flexDirection: 'row',
     alignItems: 'center',

@@ -53,7 +53,8 @@ function MainScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 8,
+    backgroundColor: '#181b2c',
+    paddingHorizontal: 8,
     paddingBottom: 50,
   },
   boldText: {
