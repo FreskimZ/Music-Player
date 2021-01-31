@@ -1,22 +1,29 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity, Alert} from 'react-native';
+import * as RootNavigation from '../util/RootNavigation';
 import Icon from 'react-native-vector-icons/Feather';
 
-function Footer() {
+function Footer({navigationRef}) {
   return (
     <View style={styles.footer}>
-      <View style={styles.container}>
-        <Icon name={'home'} size={30} color="#585a66" />
-        <Text style={styles.text}>Home</Text>
-      </View>
-      <View style={styles.container}>
-        <Icon name={'music'} size={30} color="#585a66" />
-        <Text style={styles.text}>Songs</Text>
-      </View>
-      <View style={styles.container}>
-        <Icon name={'settings'} size={30} color="#585a66" />
-        <Text style={styles.text}>Setting</Text>
-      </View>
+      <TouchableOpacity onPress={() => RootNavigation.navigate('MainScreen')}>
+        <View style={styles.container}>
+          <Icon name={'home'} size={30} color="#585a66" />
+          <Text style={styles.text}>Home</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => RootNavigation.navigate('SongsScreen')}>
+        <View style={styles.container}>
+          <Icon name={'music'} size={30} color="#585a66" />
+          <Text style={styles.text}>Songs</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => Alert.alert('Not yet implemented')}>
+        <View style={styles.container}>
+          <Icon name={'settings'} size={30} color="#585a66" />
+          <Text style={styles.text}>Setting</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
